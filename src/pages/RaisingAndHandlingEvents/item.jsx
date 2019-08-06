@@ -21,7 +21,7 @@ class Item extends Component {
             {this.styleCount()}
             <button
               onClick={() => this.props.onDelete(this.props.item.id)}
-              className="btn btn-lg btn-outline-success ml-4 float-right">
+              className="btn btn-lg btn-outline-success  ml-4 float-right">
               Delete
             </button></h5>
           <div className="card-body">
@@ -38,9 +38,9 @@ class Item extends Component {
               onClick={item => {
                 this.handleDecrement({ item });
               }}
-              className="btn btn-lg btn-outline-secondary"
+              className="ml-2 btn btn-lg btn-outline-secondary"
             >
-              Increment
+              Decrement
             </button>
  
           </div>
