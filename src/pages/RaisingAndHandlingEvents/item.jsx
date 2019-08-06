@@ -29,8 +29,7 @@ class Item extends Component {
               onClick={item => {
                 this.handleIncrement({ item });
               }}
-              className="btn btn-lg btn-outline-secondary"
-            >
+              className="btn btn-lg btn-outline-secondary">
               Increment
             </button>
 
@@ -38,11 +37,9 @@ class Item extends Component {
               onClick={item => {
                 this.handleDecrement({ item });
               }}
-              className="ml-2 btn btn-lg btn-outline-secondary"
-            >
+              className="ml-2 btn btn-lg btn-outline-secondary">
               Decrement
             </button>
- 
           </div>
         </div>
       </React.Fragment>
@@ -51,7 +48,14 @@ class Item extends Component {
  
   styleCardHeader() {
     let classes = "card-header h4 text-white bg-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    //classes += this.state.count === 0 ? "warning" : "primary";
+    if(this.state.count > 0){
+      classes += "primary";
+    } else if(this.state.count == 0) {
+      classes += "warning";
+    } else if(this.state.count < 0){
+      classes += "danger";
+    }
     return classes;
   }
  
