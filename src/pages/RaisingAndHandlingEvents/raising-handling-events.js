@@ -3,7 +3,7 @@ import Item from "./item";
 
 class raisingHandlingEventApp extends React.Component {
   state = {
-    items: [{ id: 1, value: 0 }, { id: 2, value: 10 }, { id: 3, value: 0 }]
+    items: [{ id: 1, value: 10 }, { id: 2, value: 0 }, { id: 3, value: -1 }]
   };
  
   handleDelete = itemId => {
