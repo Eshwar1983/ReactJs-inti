@@ -21,9 +21,10 @@ class Item extends Component {
             {this.styleCount()}
             <button
               onClick={() => this.props.onDelete(this.props.item.id)}
-              className="btn btn-lg btn-outline-success  ml-4 float-right">
+              className={this.styleButtonStatus()}>
               Delete
-            </button></h5>
+            </button>
+          </h5>
           <div className="card-body">
             <button
               onClick={item => {
@@ -55,6 +56,18 @@ class Item extends Component {
       classes += "warning";
     } else if(this.state.count < 0){
       classes += "danger";
+    }
+    return classes;
+  }
+
+  styleButtonStatus(){
+    let classes = "btn btn-lg ml-4 float-right btn-outline-";
+    if(this.state.count > 0){
+      classes += "light";
+    } else if(this.state.count == 0) {
+      classes += "dark";
+    } else if(this.state.count < 0){
+      classes += "info";
     }
     return classes;
   }
